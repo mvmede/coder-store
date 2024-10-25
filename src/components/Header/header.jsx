@@ -49,7 +49,7 @@ const Header = () => {
         {/* menu e carrinho */}
         <div className="flex items-center space-x-4 pr-4">
           {/* carrinho */}
-          <a href="/carrinho" className="hover:text-gray-400 ">
+          <a href="/carrinho" className="hover:text-gray-400 md:pl-20">
             <CartIcon className="h-6 w-6 " />
           </a>
 
