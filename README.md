@@ -1,71 +1,48 @@
-# Getting Started with Create React App
+<h2 align="center">🏆 CoderStore (Projeto Pessoal) 🏆</h2>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br>
+<br>
 
-## Available Scripts
+<table align="center">
+    <tr>
+    <td align="center"><img style="width: 70%; border-radius: 50%"
+    src="https://mvmede.github.io/projeto-final-grupo-3/Contato/imagens/fotogustavo.png"
+      alt="Gustavo Mamede" /><br /><sub style="font-size: 14px"><b>Gustavo Mamede</b></sub><br />
+    <a href="https://www.linkedin.com/in/gustavo-mamede-3a371818b/" alt="Linkedin">
+    <br>
+    <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/gustavo-mamede-3a371818b/" style="width:90px;" />
+    </a>
+</table>
 
-In the project directory, you can run:
+<h3 align="center">
+    Projeto Final - CoderStore - [CoderHouse]
+</h3>
+<p align="center">
+</p>
+<h2 align="center" >
+    CoderStore
+</h2>
 
-### `npm start`
+<img src="https://github.com/mvmede/coder-store/blob/main/src/components/assets/logo.png?raw=true" width="400px" height="auto" />
+<p>
+</p>
+  
+<br>
+<h2>👨🏻‍💻 Sobre o projeto</h2> 
+<p>Durante o curso de Frontend da Coderhouse, tive o prazer de desenvolver um site em React.js sozinho, fomos desafiados a desenvolver um e-commerce com o tema que gostariamos.
+  Com isso pensei em criar um e-commerce para uma loja de periféricos com o nome CoderStore. 
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
+ 
+ <h2>📄 Sobre as entregas</h2>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✔️ Design: A Interface foi desenvolvida através da minha própria visão, optei por não utilizar o Figma (mesmo sendo Designer UX UI) e apenas desenvolver com base no que eu estou vendo e desejando na hora. <br>
+✔️ Front-end: Interface realizada com as seguintes tecnologias: React.js & Javascript. <br>
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   <h2>🎁 Agradecimentos </h2>
+  <h4>Agradeço ao professor Klayton Marcos por todo conhecimento passado, carinho e atenção dada aos alunos da Coderhouse, também agradeço ao Thiago Ribeiro nosso tutor, por todo conhecimento, dicas e conteúdo que nos passou durante o curso.<h4>
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# coder-store
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmFmc3B3YzQ2cnlhOHJncnByYXVkeHpoNzY3ZDY2cmtzcXB0bnF3aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Guccz4Oq87bncsm1j4/giphy.webp" alt="Joia" width="auto" height="auto">
