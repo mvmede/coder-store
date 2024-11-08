@@ -61,8 +61,6 @@ const ItemDetailContainer = () => {
                                 Adicionar ao carrinho
                             </button>
                         </div>
-
-
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import CartIcon from "../icons/cart";
 import CloseIcon from "../icons/close";
 import MenuMobile from "../menuMobile/menuMobile";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,9 @@ const Header = () => {
     <header className="bg-neutral-950 text-white p-4">
       <div className="container mx-auto flex items-center md:max-w-[1480px] justify-between">
         <div className="text-xl font-bold">
-          <img src={logo} alt="Logo" className="pl-4 h-10" />
+          <Link to={`/`}>
+            <img src={logo} alt="Logo" className="pl-4 h-10" />
+          </Link>
         </div>
         <nav className="hidden md:flex flex-grow justify-center">
           <ul className="flex space-x-6">
