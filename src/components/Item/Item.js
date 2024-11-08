@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemCount from '../contador/ClickCounter';
+import { Link } from 'react-router-dom';
 
 const Item = ({ id, title, description, price, pictureUrl }) => {
     const formattedPrice = new Intl.NumberFormat('pt-BR', {
@@ -8,13 +9,22 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
     }).format(price);
 
     return (
-        <div className="item h-[500px] p-4 border rounded-lg shadow-lg">
-            <img src={pictureUrl} alt={title} className="w-full h-48 object-cover rounded-md" />
-            <h3 className="text-lg font-semibold mt-2">{title}</h3>
-            <p className="text-sm text-gray-500">{description}</p>
-            <p className="text-xl font-bold text-primary mt-2">{formattedPrice}</p>
-            <ItemCount />
-        </div>
+
+        <div className="item-card border bg-gray-200 p-4 rounded-md">
+            <Link to={`/item/${id}`}>
+                <img src={pictureUrl} alt={title} className="w-full h-auto rounded-md" />
+            </Link >
+            <div className="mt-4">
+                <Link to={`/item/${id}`}>
+                    <p className="text-xl font-semibold text-teal-600 hover:text-blue-700">{title}</p>
+                    <p className="mt-2 text-gray-700">{description}</p>
+                    <p className="mt-2 text-lg font-bold">{formattedPrice}</p>
+                </Link >
+                <ItemCount id={id} />
+            </div>
+
+        </div >
+
     );
 };
 

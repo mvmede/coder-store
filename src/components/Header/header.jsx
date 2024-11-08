@@ -14,17 +14,14 @@ const Header = () => {
 
   return (
     <header className="bg-neutral-950 text-white p-4">
-      <div className="container mx-auto flex items-center justify-between">
-        {/* logo */}
+      <div className="container mx-auto flex items-center md:max-w-[1480px] justify-between">
         <div className="text-xl font-bold">
           <img src={logo} alt="Logo" className="pl-4 h-10" />
         </div>
-
-        {/* nav desk */}
         <nav className="hidden md:flex flex-grow justify-center">
           <ul className="flex space-x-6">
             <li>
-              <a href="/home" className="font-Inter hover:text-gray-400">
+              <a href="/" className="font-Inter hover:text-gray-400">
                 Home
               </a>
             </li>
@@ -46,21 +43,17 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* menu e carrinho */}
         <div className="flex items-center space-x-4 pr-4">
-          {/* carrinho */}
           <a href="/carrinho" className="hover:text-gray-400 md:pl-20">
             <CartIcon className="h-6 w-6 " />
           </a>
 
-          {/* menu mobile ícone */}
           <div className="pt-2 md:hidden">
             <MenuMobile onClick={toggleMenu} />
           </div>
         </div>
       </div>
 
-      {/* menu lateral */}
       {isOpen && (
         <div
           className="fixed inset-0  bg-black bg-opacity-50 z-20"
@@ -70,8 +63,6 @@ const Header = () => {
             <button onClick={toggleMenu} className="pl-4 pt-4 text-white">
               <CloseIcon className="w-6 h-6" />
             </button>
-
-            {/* nav mobile */}
             <ul className="flex flex-col items-center font-bold space-y-16 mt-6">
               <li>
                 <a
