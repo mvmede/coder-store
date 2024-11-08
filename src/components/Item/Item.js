@@ -10,7 +10,7 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
 
     return (
 
-        <div className="item-card border bg-gray-200 p-4 rounded-md">
+        <div className="item-card border w-full bg-gray-200 p-4 rounded-md">
             <Link to={`/item/${id}`}>
                 <img src={pictureUrl} alt={title} className="w-full h-auto rounded-md" />
             </Link >

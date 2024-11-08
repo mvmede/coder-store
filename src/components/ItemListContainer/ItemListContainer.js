@@ -26,7 +26,7 @@ const ItemListContainer = () => {
                     }
                     return prev + 5;
                 });
-            }, 200);
+            }, 100);
         }
     }, [loading]);
 
@@ -49,7 +49,7 @@ const ItemListContainer = () => {
     return (
         <div>
             <p className="text-center py-8 font-extrabold text-2xl uppercase">Produtos destaque CoderStore</p>
-            <div className="item-list grid px-20 pb-20 mt-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="item-list grid md:px-20 px-8 pb-20 mt-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
                 {items.map((item, index) => (
                     <motion.div
