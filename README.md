@@ -19,30 +19,31 @@
 </h3>
 <p align="center">
 </p>
-<h2 align="center" >
-    CoderStore
-</h2>
 
-<img src="https://github.com/mvmede/coder-store/blob/main/src/components/assets/logo.png?raw=true" width="400px" height="auto" />
-<p>
-</p>
+<div align="center">
+  <img src="https://github.com/mvmede/coder-store/blob/main/src/components/assets/logo.png?raw=true" width="200px" height="auto" />
+</div>
+
   
 <br>
-<h2>👨🏻‍💻 Sobre o projeto</h2> 
+<h2 align="center">👨🏻‍💻 Sobre o projeto</h2> 
 <p>Durante o curso de Frontend da Coderhouse, tive o prazer de desenvolver um site em React.js sozinho, fomos desafiados a desenvolver um e-commerce com o tema que gostariamos.
   Com isso pensei em criar um e-commerce para uma loja de periféricos com o nome CoderStore. 
 </p>
 
 <br>
  
- <h2>📄 Sobre as entregas</h2>
+ <h2 align="center">📄 Sobre as entregas</h2>
 
 ✔️ Design: A Interface foi desenvolvida através da minha própria visão, optei por não utilizar o Figma (mesmo sendo Designer UX UI) e apenas desenvolver com base no que eu estou vendo e desejando na hora. <br>
 ✔️ Front-end: Interface realizada com as seguintes tecnologias: React.js & Javascript. <br>
 
 <br>
 
-   <h2>🎁 Agradecimentos </h2>
-  <h4>Agradeço ao professor Klayton Marcos por todo conhecimento passado, carinho e atenção dada aos alunos da Coderhouse, também agradeço ao Thiago Ribeiro nosso tutor, por todo conhecimento, dicas e conteúdo que nos passou durante o curso.<h4>
-
+<h2 align="center">🎁 Agradecimentos </h2>
+<p>Agradeço ao professor Klayton Marcos por todo conhecimento passado, carinho e atenção dada aos alunos da Coderhouse, também agradeço ao Thiago Ribeiro nosso tutor, por todo conhecimento, dicas e conteúdo que nos passou durante o curso.</p>
+<br>
+<div align="center">
 <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmFmc3B3YzQ2cnlhOHJncnByYXVkeHpoNzY3ZDY2cmtzcXB0bnF3aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Guccz4Oq87bncsm1j4/giphy.webp" alt="Joia" width="auto" height="auto">
+</div>
+<br>
