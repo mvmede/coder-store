@@ -21,8 +21,11 @@
 </p>
 
 <div align="center">
-  <img src="https://github.com/mvmede/coder-store/blob/main/src/components/assets/logo.png?raw=true" width="200px" height="auto" />
+  <a href="https://coder-store.vercel.app" target="_blank">
+    <img src="https://github.com/mvmede/coder-store/blob/main/src/components/assets/logo.png?raw=true" width="200px" height="auto" />
+  </a>
 </div>
+
 
   
 <br>
