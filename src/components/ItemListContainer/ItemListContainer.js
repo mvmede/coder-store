@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Item from '../Item/Item';
 import { motion } from 'framer-motion';
+import { useCart } from '../context/CartContext';
+import ItemCount from '../contador/ClickCounter';
 
 const mockItems = [
     { id: 1, title: 'Cadeira Office DT3 Diana V2 New Black Evolution', description: 'A cadeira de escritório Diana foi projetada para suportar longas horas de trabalho sentado, a fim de oferecer versatilidade, conveniência e bem estar.', price: 1179.99, pictureUrl: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/1/1/11726-7154525.jpg' },
@@ -13,6 +15,7 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [progress, setProgress] = useState(0);
+    const { addToCart } = useCart(); // Usando o contexto do carrinho para acessar a função addToCart
 
     useEffect(() => {
         if (loading) {
@@ -29,6 +32,29 @@ const ItemListContainer = () => {
             }, 100);
         }
     }, [loading]);
+
+    // Função para adicionar o item ao carrinho
+    const handleAddToCart = (produto) => {
+        const item = {
+            id: produto.id, // id do produto
+            name: produto.title, // nome do produto
+            price: produto.price, // preço do produto
+            image: produto.pictureUrl, // imagem do produto
+        };
+
+        addToCart(item); // Passa o item para o carrinho
+    };
+
+    const Item = ({ id, title, price, pictureUrl, onAddToCart }) => {
+        return (
+            <div className="border border-gray-300 text-center p-4 rounded-md shadow-md">
+                <img src={pictureUrl} alt={title} className="w-full text-center h-auto" />
+                <h2 className="text-lg font-bold mt-2">{title}</h2>
+                <p className="text-lg font-bold text-sky-700 mt-1 text-center">R$ {price}</p>
+                <ItemCount item={{ id, title, price, pictureUrl }} />
+            </div>
+        );
+    };
 
     if (loading) {
         return (
@@ -48,9 +74,9 @@ const ItemListContainer = () => {
 
     return (
         <div>
-            <p className="text-center py-8 font-extrabold text-2xl uppercase">Produtos destaque CoderStore</p>
-            <div className="item-list grid md:px-20 px-8 pb-20 mt-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <p className="text-center mt-8 py-4 font-extrabold text-2xl uppercase">Produtos em Destaque</p>
 
+            <div className="item-list grid md:px-20 px-4 pb-20 mt-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {items.map((item, index) => (
                     <motion.div
                         key={item.id}
@@ -58,7 +84,7 @@ const ItemListContainer = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.2, duration: 0.8 }}
                     >
-                        <Item {...item} />
+                        <Item {...item} onAddToCart={() => handleAddToCart(item)} />
                     </motion.div>
                 ))}
             </div>

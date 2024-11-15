@@ -1,20 +1,22 @@
-// src/components/Header/header.jsx
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import CartIcon from "../icons/cart";
 import CloseIcon from "../icons/close";
 import MenuMobile from "../menuMobile/menuMobile";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext"; // Importando o hook do carrinho
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { cart } = useCart(); // Usando o hook do carrinho para obter os itens
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0); // Calculando o total de itens no carrinho
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <header className="bg-neutral-950 text-white p-4">
+    <header className="fixed top-0 left-0 w-full bg-neutral-950 text-white p-4 z-50 shadow-lg">
       <div className="container mx-auto flex items-center md:max-w-[1480px] justify-between">
         <div className="text-xl font-bold">
           <Link to={`/`}>
@@ -47,9 +49,18 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4 pr-4">
-          <a href="/carrinho" className="hover:text-gray-400 md:pl-20">
-            <CartIcon className="h-6 w-6 " />
-          </a>
+          {/* Link para a página do carrinho */}
+          <Link
+            to="/carrinho"
+            className="relative hover:text-gray-400 md:pl-20"
+          >
+            <CartIcon className="h-6 w-6 relative" />
+            {totalItems > 0 && (
+              <span className="absolute top-0 right-8 text-xs bg-red-500 text-white rounded-full px-2 py-1">
+                {totalItems}
+              </span>
+            )}
+          </Link>
 
           <div className="pt-2 md:hidden">
             <MenuMobile onClick={toggleMenu} />
@@ -59,7 +70,7 @@ const Header = () => {
 
       {isOpen && (
         <div
-          className="fixed inset-0  bg-black bg-opacity-50 z-20"
+          className="fixed inset-0 bg-black bg-opacity-50 z-20"
           onClick={toggleMenu}
         >
           <div className="fixed right-0 top-0 w-full h-full max-w-md bg-neutral-950 p-4">
@@ -68,10 +79,7 @@ const Header = () => {
             </button>
             <ul className="flex flex-col items-center font-bold space-y-16 mt-6">
               <li>
-                <a
-                  href="/home"
-                  className="font-Inter hover:text-gray-400 text-xl"
-                >
+                <a href="/" className="font-Inter hover:text-gray-400 text-xl">
                   Home
                 </a>
               </li>

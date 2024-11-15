@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useCart } from '../components/context/CartContext'; // Importando o contexto
 
 const mockItems = [
     { id: 1, title: 'Cadeira Office DT3 Diana V2 New Black Evolution', description: 'A cadeira de escritório Diana foi projetada para suportar longas horas de trabalho sentado, a fim de oferecer versatilidade, conveniência e bem estar.', price: 1179.99, pictureUrl: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/1/1/11726-7154525.jpg' },
@@ -9,18 +10,19 @@ const mockItems = [
 ];
 
 const ItemDetailContainer = () => {
-    const { itemId } = useParams();
+    const { id } = useParams();
     const [item, setItem] = useState(null);
+    const { addToCart } = useCart(); // Acessando a função addToCart do contexto
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchItem = () => {
-            const foundItem = mockItems.find(item => item.id.toString() === itemId);
+            const foundItem = mockItems.find(item => item.id.toString() === id);
             setItem(foundItem);
         };
 
         fetchItem();
-    }, [itemId]);
+    }, [id]);
 
     if (!item) {
         return (
@@ -28,14 +30,24 @@ const ItemDetailContainer = () => {
                 <p className="text-9xl text-center text-gray-600">404</p>
                 <p className="text-xl text-center text-gray-600">Infelizmente a CoderStore não encontrou esse produto...</p>
             </div>
-
         );
     }
 
+    // Função handleAddToCart
+    const handleAddToCart = () => {
+        const productItem = {
+            id: item.id,
+            name: item.title, // Usando o título como nome do produto
+            price: item.price,
+            image: item.pictureUrl, // Usando a URL da imagem
+        };
+        addToCart(productItem); // Passa o item para o carrinho
+    };
+
     return (
-        <div className='bg-white'>
-            <div className=" min-h-screen justify-center md:max-w-[1920px] py-8 px-6 sm:px-48 mx-auto">
-                <div className="flex items-start pb-2  mb-6">
+        <div className="pt-16 bg-white">
+            <div className="min-h-screen justify-center md:max-w-[1920px] py-8 px-6 sm:px-48 mx-auto">
+                <div className="flex items-start pb-2 mb-6">
                     <button
                         onClick={() => navigate(-1)}
                         className="text-white bg-teal-600 rounded-2xl px-4 py-1 w-auto h-auto mr-4"
@@ -54,10 +66,16 @@ const ItemDetailContainer = () => {
                             <a className='font-regular'>Preço:</a> <a className='font-bold'>R${item.price.toFixed(2).replace('.', ',')}</a>
                         </p>
                         <div className='flex flex-col gap-3 pt-4 md:flex-row'>
-                            <button className="bg-teal-600 w-full md:w-52 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">
+                            <button
+                                onClick={handleAddToCart} // Chamando a função handleAddToCart
+                                className="bg-teal-600 w-full md:w-52 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"
+                            >
                                 Comprar
                             </button>
-                            <button className="bg-cyan-700 w-full md:w-52 hover:bg-cyan-800 text-white font-regular py-2 px-4 rounded">
+                            <button
+                                onClick={handleAddToCart} // Chamando a função handleAddToCart
+                                className="bg-cyan-700 w-full md:w-52 hover:bg-cyan-800 text-white font-regular py-2 px-4 rounded"
+                            >
                                 Adicionar ao carrinho
                             </button>
                         </div>

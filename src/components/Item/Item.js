@@ -11,11 +11,11 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
     return (
 
         <div className="item-card border w-full bg-gray-200 p-4 rounded-md">
-            <Link to={`/item/${id}`}>
+            <Link to={`/produto/${id}`}>
                 <img src={pictureUrl} alt={title} className="w-full h-auto rounded-md" />
             </Link >
             <div className="mt-4">
-                <Link to={`/item/${id}`}>
+                <Link to={`/produto/${id}`}>
                     <p className="text-xl font-semibold text-teal-600 hover:text-blue-700">{title}</p>
                     <p className="mt-2 text-gray-700">{description}</p>
                     <p className="mt-2 text-lg font-bold">{formattedPrice}</p>
