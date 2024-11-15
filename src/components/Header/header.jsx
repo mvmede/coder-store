@@ -4,12 +4,12 @@ import CartIcon from "../icons/cart";
 import CloseIcon from "../icons/close";
 import MenuMobile from "../menuMobile/menuMobile";
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // Importando o hook do carrinho
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { cart } = useCart(); // Usando o hook do carrinho para obter os itens
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0); // Calculando o total de itens no carrinho
+  const { cart } = useCart();
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -49,7 +49,6 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4 pr-4">
-          {/* Link para a página do carrinho */}
           <Link
             to="/carrinho"
             className="relative hover:text-gray-400 md:pl-20"

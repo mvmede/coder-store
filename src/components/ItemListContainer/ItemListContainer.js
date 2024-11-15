@@ -15,7 +15,7 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [progress, setProgress] = useState(0);
-    const { addToCart } = useCart(); // Usando o contexto do carrinho para acessar a função addToCart
+    const { addToCart } = useCart();
 
     useEffect(() => {
         if (loading) {
@@ -33,16 +33,15 @@ const ItemListContainer = () => {
         }
     }, [loading]);
 
-    // Função para adicionar o item ao carrinho
     const handleAddToCart = (produto) => {
         const item = {
-            id: produto.id, // id do produto
-            name: produto.title, // nome do produto
-            price: produto.price, // preço do produto
-            image: produto.pictureUrl, // imagem do produto
+            id: produto.id,
+            name: produto.title,
+            price: produto.price,
+            image: produto.pictureUrl,
         };
 
-        addToCart(item); // Passa o item para o carrinho
+        addToCart(item);
     };
 
     const Item = ({ id, title, price, pictureUrl, onAddToCart }) => {

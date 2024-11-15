@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const CartPage = () => {
   const { cart, removeFromCart, clearCart } = useCart();
 
-  // Calcular o valor total do carrinho
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
@@ -22,7 +21,6 @@ const CartPage = () => {
                 className="flex justify-between p-4 bg-white mb-4 rounded"
               >
                 <div className="flex items-center space-x-4">
-                  {/* Verificando se a imagem existe */}
                   {item.image ? (
                     <img
                       src={item.image}
@@ -30,7 +28,7 @@ const CartPage = () => {
                       className="h-16 w-16 object-cover rounded"
                     />
                   ) : (
-                    <div className="h-16 w-16 bg-gray-300 rounded" /> // Exibe um placeholder caso a imagem não exista
+                    <div className="h-16 w-16 bg-gray-300 rounded" />
                   )}
                   <div>
                     <p className="font-semibold">{item.name}</p>

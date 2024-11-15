@@ -23,19 +23,16 @@ const BannerRotativo = () => {
     },
   ];
 
-  // Avançar para o próximo banner
   const nextBanner = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length);
   };
 
-  // Voltar para o banner anterior
   const prevBanner = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + banners.length) % banners.length
     );
   };
 
-  // Configuração para alternar os banners a cada 5 segundos
   useEffect(() => {
     const interval = setInterval(nextBanner, 5000);
     return () => clearInterval(interval);
@@ -52,15 +49,12 @@ const BannerRotativo = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="w-full h-full relative">
-          {/* Imagem */}
           <img
             src={banners[currentIndex].imageUrl}
             alt={banners[currentIndex].alt}
             className="w-full h-full object-cover rounded-md"
           />
-          {/* Camada preta com opacidade sobre a imagem */}
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 rounded-md"></div>
-          {/* Texto sobre a imagem */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center px-4 sm:px-8 md:px-20">
             <h2 className="text-base md:text-3xl font-bold">
               {banners[currentIndex].title}
@@ -72,7 +66,6 @@ const BannerRotativo = () => {
         </div>
       </motion.div>
 
-      {/* Botões de navegação */}
       <div className="absolute top-1/2 left-0 right-0 flex justify-between px-4">
         <button
           onClick={prevBanner}

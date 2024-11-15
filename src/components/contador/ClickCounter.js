@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext'; // Certifique-se de que o caminho está correto
+import { useCart } from '../context/CartContext';
 
 export default function ItemCount({ item }) {
     const [count, setCount] = useState(1);
-    const { addToCart } = useCart(); // Acessando a função addToCart do contexto
+    const { addToCart } = useCart();
 
     const increment = () => setCount(count + 1);
     const decrement = () => {
@@ -13,9 +13,7 @@ export default function ItemCount({ item }) {
         }
     };
 
-    // Função para adicionar o item ao carrinho com a quantidade
     const handleAddToCart = () => {
-        // Verifica se o item e suas propriedades estão definidas
         if (!item || !item.id || !item.price || !item.pictureUrl) {
             console.error("Item is not defined or missing required properties");
             return;
@@ -29,7 +27,7 @@ export default function ItemCount({ item }) {
             quantity: count,
         };
 
-        addToCart(itemToAdd);  // Passa o item com a quantidade para o carrinho
+        addToCart(itemToAdd);
     };
 
     return (

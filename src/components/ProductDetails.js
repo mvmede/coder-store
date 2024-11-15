@@ -12,7 +12,7 @@ const mockItems = [
 const ItemDetailContainer = () => {
     const { id } = useParams();
     const [item, setItem] = useState(null);
-    const { addToCart } = useCart(); // Acessando a função addToCart do contexto
+    const { addToCart } = useCart();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -33,15 +33,14 @@ const ItemDetailContainer = () => {
         );
     }
 
-    // Função handleAddToCart
     const handleAddToCart = () => {
         const productItem = {
             id: item.id,
-            name: item.title, // Usando o título como nome do produto
+            name: item.title,
             price: item.price,
-            image: item.pictureUrl, // Usando a URL da imagem
+            image: item.pictureUrl,
         };
-        addToCart(productItem); // Passa o item para o carrinho
+        addToCart(productItem);
     };
 
     return (
@@ -67,13 +66,13 @@ const ItemDetailContainer = () => {
                         </p>
                         <div className='flex flex-col gap-3 pt-4 md:flex-row'>
                             <button
-                                onClick={handleAddToCart} // Chamando a função handleAddToCart
+                                onClick={handleAddToCart}
                                 className="bg-teal-600 w-full md:w-52 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"
                             >
                                 Comprar
                             </button>
                             <button
-                                onClick={handleAddToCart} // Chamando a função handleAddToCart
+                                onClick={handleAddToCart}
                                 className="bg-cyan-700 w-full md:w-52 hover:bg-cyan-800 text-white font-regular py-2 px-4 rounded"
                             >
                                 Adicionar ao carrinho
