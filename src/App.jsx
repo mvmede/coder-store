@@ -13,6 +13,7 @@ import ContactPage from "./pages/ContactPage";
 import CartPage from "./pages/CartPage";
 import Header from "./components/Header/header";
 import ProductDetails from "./components/ProductDetails";
+import Footer from "./components/Footer/footer";
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -41,6 +42,7 @@ const App = () => {
           </Routes>
         </div>
       </Router>
+      <Footer />
     </CartProvider>
   );
 };
