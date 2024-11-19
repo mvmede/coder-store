@@ -1,6 +1,6 @@
 // src/pages/ContactPage.jsx
 import React from "react";
-import { FaLinkedin, FaEnvelope, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaInstagram, FaGithub } from "react-icons/fa";
 
 const ContactPage = () => {
   return (
@@ -28,6 +28,12 @@ const ContactPage = () => {
           className="text-gray-400 hover:text-gray-200"
         >
           <FaEnvelope />
+        </a>
+        <a
+          href="https://github.com/mvmede"
+          className="text-gray-400 hover:text-gray-200"
+        >
+          <FaGithub />
         </a>
         <a
           href="https://www.instagram.com/mvmede"
