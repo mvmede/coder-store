@@ -1,5 +1,5 @@
 import React from "react";
-import { useCart } from "../components/context/CartContext";
+import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartPage = () => {
@@ -9,7 +9,9 @@ const CartPage = () => {
 
   return (
     <div className="bg-gray-100 pt-24 min-h-screen p-4">
-      <h1 className="text-2xl pb-8 font-bold">Carrinho de Compras</h1>
+      <h1 className="text-2xl pb-8 text-center font-bold">
+        Carrinho de Compras
+      </h1>
       {cart.length === 0 ? (
         <p>Seu carrinho está vazio!</p>
       ) : (
@@ -18,7 +20,7 @@ const CartPage = () => {
             {cart.map((item) => (
               <li
                 key={item.id}
-                className="flex justify-between p-4 bg-white mb-4 rounded"
+                className="flex  justify-between p-4 bg-white mb-4 rounded"
               >
                 <div className="flex items-center space-x-4">
                   {item.image ? (
@@ -38,10 +40,10 @@ const CartPage = () => {
                 </div>
                 <div className="flex items-center space-x-4">
                   <button
-                    className="bg-red-500 text-white py-1 px-4 rounded"
+                    className="bg-red-500 text-white text-sm py-1 px-4 rounded"
                     onClick={() => removeFromCart(item.id)}
                   >
-                    Remover
+                    Remover Item
                   </button>
                 </div>
               </li>
@@ -52,14 +54,14 @@ const CartPage = () => {
           </div>
           <div className="mt-4 flex justify-between">
             <button
-              className="bg-blue-500 text-white py-2 px-4 rounded"
+              className="bg-yellow-800 text-white py-2 px-4 rounded"
               onClick={clearCart}
             >
               Limpar Carrinho
             </button>
             <Link to="/checkout">
               <button
-                className={`bg-green-500 text-white py-2 px-4 rounded ${
+                className={`bg-blue-700 text-white py-2 px-4 rounded ${
                   cart.length === 0 ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 disabled={cart.length === 0}

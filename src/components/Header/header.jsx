@@ -4,7 +4,7 @@ import CartIcon from "../icons/cart";
 import CloseIcon from "../icons/close";
 import MenuMobile from "../menuMobile/menuMobile";
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../../context/CartContext";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -5,7 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import { CartProvider } from "./components/context/CartContext";
+import { CartProvider } from "./context/CartContext";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import AboutPage from "./pages/AboutPage";
@@ -14,6 +14,7 @@ import CartPage from "./pages/CartPage";
 import Header from "./components/Header/header";
 import ProductDetails from "./components/ProductDetails";
 import Footer from "./components/Footer/footer";
+import Checkout from "./pages/Checkout";
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/contato" element={<ContactPage />} />
             <Route path="/carrinho" element={<CartPage />} />
             <Route path="/produto/:id" element={<ProductDetails />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </div>
       </Router>

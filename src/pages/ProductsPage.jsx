@@ -1,6 +1,6 @@
 // src/pages/ProductsPage.jsx
 import React from "react";
-import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
+import ItemListContainerGeneral from "../components/ItemListContainer/ItemListContainer";
 
 const ProductsPage = () => {
   return (
@@ -8,8 +8,7 @@ const ProductsPage = () => {
       <main>
         <h1>Produtos</h1>
         <p>Confira nossos produtos.</p>
-
-        <ItemListContainer />
+        <ItemListContainerGeneral />
       </main>
     </div>
   );

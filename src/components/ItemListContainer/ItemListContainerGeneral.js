@@ -11,7 +11,7 @@ const mockItems = [
     { id: 4, title: 'Headset Gamer Fantech Studio, Wireless, Drivers 50mm, Preto', description: 'O Headset Gamer Fantech Studio é um modelo wireless projetado para proporcionar uma experiência de áudio imersiva e sem fio para gamers.', price: 249.99, pictureUrl: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/w/h/whg03-bk12641612135.jpg' },
 ];
 
-const ItemListContainer = () => {
+const ItemListContainerGeneral = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [progress, setProgress] = useState(0);
@@ -91,4 +91,4 @@ const ItemListContainer = () => {
     );
 };
 
-export default ItemListContainer;
+export default ItemListContainerGeneral;
