@@ -51,7 +51,7 @@ const Checkout = () => {
     setTimeout(() => {
       setShowModal(false);
       navigate("/");
-    }, 3000);
+    }, 5000);
   };
 
   if (loading) {
@@ -95,7 +95,7 @@ const Checkout = () => {
       <h1 className="text-2xl pb-8 text-center font-bold">Checkout</h1>
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-gray-800 rounded-lg p-8 text-center shadow-lg w-80">
+          <div className="bg-gray-800 rounded-lg p-8 text-center shadow-lg w-80  sm:mx-4">
             <img src={logo} alt="Logo" className="w-auto mx-auto mb-4" />
             <p className="text-lg text-white font-semibold">
               Compra realizada com sucesso!
@@ -103,10 +103,10 @@ const Checkout = () => {
           </div>
         </div>
       )}
+
       {step === 1 && (
         <div>
           {/* Passo-a-passo */}
-
           <div className="flex justify-center">
             <div className="bg-gray-600 rounded-full py-4 mb-6">
               <h1 className="text-2xl text-white px-12 font-bold text-center">
@@ -114,21 +114,26 @@ const Checkout = () => {
               </h1>
             </div>
           </div>
-          <div className="flex items-center my-8 justify-center">
-            <div className="w-4 h-4 bg-green-500 rounded-full animate-ping" />
-            <h2 className="text-xl items-center flex pl-2 font-semibold text-center ">
-              Verifique seus itens{" "}
-              <div className="border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
-            </h2>
-            <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center ">
-              Dados Pessoais
-              <div className="border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
-            </h2>
-            <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center ">
-              Pagamento
-            </h2>
+          <div className="flex flex-col md:flex-row items-center my-8 justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <div className="flex items-center">
+              <div className="w-4 h-4 bg-green-500 rounded-full animate-ping" />
+              <h2 className="text-xl items-center flex pl-2 font-semibold text-center">
+                Verifique seus itens
+                <div className="hidden md:block border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
+              </h2>
+            </div>
+            <div className="flex items-center">
+              <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center">
+                Dados Pessoais
+                <div className="hidden md:block border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
+              </h2>
+            </div>
+            <div className="flex items-center">
+              <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center">
+                Pagamento
+              </h2>
+            </div>
           </div>
-
           {/* Passo-a-passo */}
 
           <ul>
@@ -168,7 +173,6 @@ const Checkout = () => {
       {step === 2 && (
         <div>
           {/* Passo-a-passo */}
-
           <div className="flex justify-center">
             <div className="bg-gray-600 rounded-full py-4 mb-6">
               <h1 className="text-2xl text-white px-12 font-bold text-center">
@@ -176,21 +180,26 @@ const Checkout = () => {
               </h1>
             </div>
           </div>
-          <div className="flex items-center my-8 justify-center">
-            <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center ">
-              Verifique seus itens{" "}
-              <div className="border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
-            </h2>
-            <div className="w-4 h-4 bg-green-500 rounded-full animate-ping" />
-            <h2 className="text-xl items-center  flex pl-2 font-semibold text-center ">
-              Dados Pessoais
-              <div className="border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
-            </h2>
-            <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center ">
-              Pagamento
-            </h2>
+          <div className="flex flex-col md:flex-row items-center my-8 justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <div className="flex items-center">
+              <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center">
+                Verifique seus itens
+                <div className="hidden md:block border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
+              </h2>
+            </div>
+            <div className="flex items-center">
+              <div className="w-4 h-4 bg-green-500 rounded-full animate-ping" />
+              <h2 className="text-xl items-center  flex pl-2 font-semibold text-center">
+                Dados Pessoais
+                <div className="hidden md:block border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
+              </h2>
+            </div>
+            <div className="flex items-center">
+              <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center">
+                Pagamento
+              </h2>
+            </div>
           </div>
-
           {/* Passo-a-passo */}
           <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -279,7 +288,6 @@ const Checkout = () => {
       {step === 3 && (
         <div>
           {/* Passo-a-passo */}
-
           <div className="flex justify-center">
             <div className="bg-gray-600 rounded-full py-4 mb-6">
               <h1 className="text-2xl text-white px-12 font-bold text-center">
@@ -287,21 +295,26 @@ const Checkout = () => {
               </h1>
             </div>
           </div>
-          <div className="flex items-center my-8 justify-center">
-            <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center ">
-              Verifique seus itens{" "}
-              <div className="border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
-            </h2>
-            <h2 className="text-xl items-center text-gray-400  flex pl-2 font-semibold text-center ">
-              Dados Pessoais
-              <div className="border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
-            </h2>
-            <div className="w-4 h-4 bg-green-500 rounded-full animate-ping" />
-            <h2 className="text-xl items-center  flex pl-2 font-semibold text-center ">
-              Pagamento
-            </h2>
+          <div className="flex flex-col md:flex-row items-center my-8 justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <div className="flex items-center">
+              <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center">
+                Verifique seus itens
+                <div className="hidden md:block border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
+              </h2>
+            </div>
+            <div className="flex items-center">
+              <h2 className="text-xl items-center text-gray-400 flex pl-2 font-semibold text-center">
+                Dados Pessoais
+                <div className="hidden md:block border-2 w-24 mx-4 items-center rounded-full border-gray-300 my-4" />
+              </h2>
+            </div>
+            <div className="flex items-center">
+              <div className="w-4 h-4 bg-green-500 rounded-full animate-ping" />
+              <h2 className="text-xl items-center  flex pl-2 font-semibold text-center">
+                Pagamento
+              </h2>
+            </div>
           </div>
-
           {/* Passo-a-passo */}
           <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -389,7 +402,7 @@ const Checkout = () => {
         )}
         {step < 3 ? (
           <button
-            className="bg-blue-500  flex justify-center items-center text-white py-2 px-44 rounded"
+            className="bg-blue-500  flex justify-center items-center text-white py-2 px-24 rounded"
             onClick={handleNextStep}
           >
             Próximo
